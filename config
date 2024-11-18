@@ -1,0 +1,5 @@
+
+lock "swaylock"
+timeout 120 "loginctl lock-session"
+timeout 150 "swaymsg 'output * dpms off'" resume "swaymsg 'output * dpms on'"
+before-sleep 'playerctl pause; loginctl lock-session'
